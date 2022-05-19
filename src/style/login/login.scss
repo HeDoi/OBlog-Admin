@@ -1,0 +1,129 @@
+.login-page {
+  height: 100%;
+
+  .main-bg {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url(@/static/images/bg1.jpg);
+    transition: 0.5 all;
+  }
+
+  .login-container {
+    position: relative;
+    width: 4.2rem;
+    height: 100%;
+    top: 0;
+    display: flex;
+    margin-left: 5%;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.75) 0 0 .35rem -.05rem;
+    backdrop-filter: blur(10px);  // 模糊遮罩
+    background-color: rgba(0, 0, 0, 0.5);
+
+    .title-container {
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+      margin: .5rem auto 1rem .5rem;
+
+      .title {
+        height: .5rem;
+        line-height: .5rem;
+        font-size: .2rem;
+        color: #adb5bd;
+        font-weight: 700;
+        font-family: "TypoGraphica";
+      }
+    }
+
+    .login-form {
+      width: 100%;
+      padding: .2rem .5rem;
+
+      :deep(.el-form-item) {
+        display: block;
+        margin: .14rem 0;
+
+        .el-input {
+
+          .el-input__wrapper {
+            background-color: transparent;
+            box-shadow: none;
+            padding: 0;
+
+            .el-input__inner {
+              height: .4rem;
+              font-size: .16rem;
+              padding: .08rem .48rem;
+              box-sizing: border-box;
+              transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+              color: #adb5bd;
+              border-bottom: #adb5bd .01rem solid;
+            }
+
+            .el-input__suffix {
+              height: 1px;
+              position: absolute;
+              width: 100%;
+              bottom: 0;
+              border-bottom: 1px #5e72e4 solid;
+              transform: scaleX(0);
+              transition: transform 0.3s;
+            }
+          }
+
+          .is-focus {
+            .el-input__suffix {
+              transform: none;
+            }
+          }
+        }
+
+        .show-pwd,
+        .svg-container {
+          position: absolute;
+          text-transform: none;
+          line-height: 1;
+          color: #adb5bd;
+
+          .el-icon {
+            font-size: .24rem;
+          }
+        }
+
+        .svg-container{
+          left: .1rem;
+        }
+
+        .show-pwd {
+          right: .1rem;
+        }
+
+      }
+
+      :deep(.el-button) {
+        box-shadow: rgba(0, 0, 0, 0.1) 0 0 .5rem 0;
+        font-weight: 500;
+        font-size: .15rem;
+        color: #fff;
+        text-align: center;
+        cursor: pointer;
+        min-height: .5rem;
+        background-color: #5e72e4;
+        border-radius: .06rem;
+        outline: none;
+        border-style: none;
+        padding: .1rem 0;
+        margin: .3rem 0 1rem;
+        transition: all 0.3s;
+        letter-spacing: .128rem;
+      }
+    }
+  }
+}

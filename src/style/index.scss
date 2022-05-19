@@ -1,0 +1,55 @@
+html,
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-size: 100px;
+  -moz-osx-font-smoothing: grayscale;  // 字体平滑处理和抗锯齿渲染 firefox https://blog.csdn.net/weixin_34657323/article/details/117800756
+  -webkit-font-smoothing: antialiased;  // 字体平滑处理和抗锯齿渲染 chrome、safari
+  text-rendering: optimizeLegibility;  // CSS⽂本渲染属性text-rendering
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+}
+
+body {
+  font-size: 0.14rem;
+}
+
+#app {
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;  // 继承父元素的 box-sizing 属性
+  margin: 0;
+  padding: 0;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit; // 继承父元素的 color 属性
+  text-emphasis: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+div:focus {
+  outline: none;
+}
+
+.clearFix {  // 清除浮动
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: ' ';
+    clear: both;
+    height: 0;
+  }
+}
