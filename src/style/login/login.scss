@@ -10,7 +10,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    background-image: url(@/static/images/bg1.jpg);
+    background-image: url(../../static/images/bg1.jpg);
     transition: 0.5 all;
   }
 
@@ -49,6 +49,11 @@
       :deep(.el-form-item) {
         display: block;
         margin: .14rem 0;
+
+        .el-form-item__error {
+          padding-top: 5px;
+          left: .48rem;
+        }
 
         .el-input {
 
