@@ -9,9 +9,7 @@
       <el-form class="login-form">
         <el-form-item>
           <span class="svg-container">
-            <el-icon>
-              <User />
-            </el-icon>
+            <i class="iconfont icon-user"></i>
           </span>
           <el-input name="username" type="text">
             <template #suffix>
@@ -20,18 +18,14 @@
         </el-form-item>
         <el-form-item>
           <span class="svg-container">
-            <el-icon>
-              <Lock />
-            </el-icon>
+            <i class="iconfont icon-password"></i>
           </span>
           <el-input name="password">
             <template #suffix>
             </template>
           </el-input>
           <span class="show-pwd">
-            <el-icon>
-              <View />
-            </el-icon>
+            <i class="iconfont icon-view-off"></i>
           </span>
         </el-form-item>
         <el-button type="primary" size="default" style="width: 100%">登录</el-button>
@@ -41,10 +35,18 @@
 </template>
 
 <script setup>
-import { User, Lock, View } from '@element-plus/icons'
 import {} from 'vue'
 </script>
 
 <style lang="scss" scoped>
-@import '@/style/login/login.scss'
+@import url(//at.alicdn.com/t/font_3418537_ltqyl35tn4.css);
+@import '@/style/login/login.scss';
+.iconfont {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  overflow: hidden;
+  vertical-align: -0.15em;
+  font-size: 1em;
+}
 </style>
