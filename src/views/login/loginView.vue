@@ -6,7 +6,7 @@
       <div class="title-container">
         <h3 class="title">用户登录</h3>
       </div>
-      <el-form class="login-form" :model="loginFrom" :rules="loginRules">
+      <el-form class="login-form" ref="loginFromRef" :model="loginFrom" :rules="loginRules">
         <el-form-item prop="username">
           <span class="svg-container">
             <i class="iconfont icon-user"></i>
@@ -28,7 +28,7 @@
             <i class="iconfont" :class="passwordShow?'icon-view':'icon-view-off'"></i>
           </span>
         </el-form-item>
-        <el-button type="primary" size="default" style="width: 100%">登录</el-button>
+        <el-button type="primary" size="default" @click="handlerLogin">登录</el-button>
       </el-form>
     </div>
   </div>
@@ -36,8 +36,9 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useStore } from 'vuex'
 const loginFrom = ref({
-  username: 'admin',
+  username: 'super-admin',
   password: '123456'
 })
 
@@ -55,6 +56,30 @@ const onChangePasswordShow = () => {
   passwordShow.value = !passwordShow.value
 }
 
+const loading = ref(false)
+const loginFromRef = ref(null)
+const store = useStore()
+const handlerLogin = () => {
+  console.log(loginFrom.value)
+  // 进行表单校验
+  loginFromRef.value.validate(valid => {
+    console.log(valid)
+    if (!valid) {
+      loading.value = true
+    } else {
+      loading.value = true
+      // 进行登录
+      store.dispatch('user/login', loginFrom.value)
+        .then(() => {
+          loading.value = false
+        })
+        .catch(err => {
+          console.log(err)
+          loading.value = false
+        })
+    }
+  })
+}
 </script>
 
 <style lang="scss" scoped>
