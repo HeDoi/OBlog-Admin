@@ -37,6 +37,7 @@
 <script setup>
 import { ref } from 'vue'
 import { useStore } from 'vuex'
+import router from '@/router'
 const loginFrom = ref({
   username: 'super-admin',
   password: '123456'
@@ -70,6 +71,7 @@ const handlerLogin = () => {
       store.dispatch('user/login', loginFrom.value)
         .then(() => {
           loading.value = false
+          router.push('/')
         })
         .catch(err => {
           console.log(err)
