@@ -28,7 +28,7 @@
             <i class="iconfont" :class="passwordShow?'icon-view':'icon-view-off'"></i>
           </span>
         </el-form-item>
-        <el-button type="primary" size="default" @click="handlerLogin">登录</el-button>
+        <el-button type="primary" size="default" :loading="loading" @click="handlerLogin">登录</el-button>
       </el-form>
     </div>
   </div>
@@ -60,10 +60,8 @@ const loading = ref(false)
 const loginFromRef = ref(null)
 const store = useStore()
 const handlerLogin = () => {
-  console.log(loginFrom.value)
   // 进行表单校验
   loginFromRef.value.validate(valid => {
-    console.log(valid)
     if (!valid) {
       loading.value = true
     } else {
