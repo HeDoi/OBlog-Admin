@@ -13,7 +13,6 @@ service.interceptors.response.use(
       ElMessage.success(message)
       return data
     } else {
-      console.log(data)
       ElMessage.error(message)
       return Promise.reject(new Error(message))
     }
