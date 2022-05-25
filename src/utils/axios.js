@@ -1,7 +1,8 @@
-import store from '@/store/index'
+import md5 from 'md5'
+import store from '@/store'
 import axios from 'axios'
 import { ElMessage } from 'element-plus'
-import md5 from 'md5'
+import { tokenTimeOut } from '@/utils/auth'
 
 const service = axios.create({
   baseURL: process.env.VUE_APP_BASE_API,
@@ -11,6 +12,10 @@ const service = axios.create({
 service.interceptors.request.use(
   config => {
     if (store.getters.token) {
+      if (tokenTimeOut()) {
+        store.dispatch('user/loginOut')
+        return Promise.reject(new Error('token过期'))
+      }
       config.headers.Authorization = `Bearer ${store.getters.token}`
     }
     const now = parseInt(Date.now() / 1000)

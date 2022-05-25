@@ -13,7 +13,7 @@
             <a href="/">
               <el-dropdown-item>课程首页</el-dropdown-item>
             </a>
-            <el-dropdown-item divided>退出</el-dropdown-item>
+            <el-dropdown-item divided @click="handleLoginOut">退出</el-dropdown-item>
           </el-dropdown-menu>
         </template>
       </el-dropdown>
@@ -23,8 +23,10 @@
 
 <script setup>
 import {} from 'vue'
-import { useStore } from 'vuex'
-const store = useStore()
+import store from '@/store'
+const handleLoginOut = () => {
+  store.dispatch('user/loginOut')
+}
 </script>
 
 <style lang="scss" scoped>
