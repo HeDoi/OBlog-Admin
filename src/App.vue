@@ -3,7 +3,4 @@
 </template>
 
 <style>
-export default {
-  name: 'App'
-}
 </style>

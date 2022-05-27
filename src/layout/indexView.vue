@@ -1,6 +1,6 @@
 <template>
   <div class="app-wrapper">
-    <side-bar class="sideBar-container"></side-bar>
+    <sidebar-view class="sideBar-container"></sidebar-view>
     <div class="app-container">
       <div class="fixed-header">
         <nav-bar class="navBar-container"></nav-bar>
@@ -12,9 +12,9 @@
 
 <script setup>
 import {} from 'vue'
-import SideBar from './components/sideBar.vue'
-import NavBar from './components/navBar.vue'
-import AppMain from './components/appMain.vue'
+import SidebarView from './components/sidebar/indexView'
+import NavBar from './components/navBar'
+import AppMain from './components/appMain'
 </script>
 
 <style lang="scss" scoped>
@@ -27,7 +27,6 @@ import AppMain from './components/appMain.vue'
     float: left;
     width: $sideBarWidth;
     height: 100%;
-    background-color: #666;
   }
   .app-container {
     float: right;

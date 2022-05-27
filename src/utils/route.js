@@ -30,7 +30,6 @@ export const generateRoutes = (routes, baseUrl = '') => {
       result.push(...generateRoutes(route.children))
       return
     }
-    console.log(routePath)
     let data = result.find(route => route.path === routePath)
     if (!data) {
       data = {
