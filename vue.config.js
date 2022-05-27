@@ -1,6 +1,15 @@
 const { defineConfig } = require('@vue/cli-service')
 
 module.exports = defineConfig({
+  configureWebpack() {
+    return {
+      resolve: {
+        fallback: {
+          path: require.resolve('path-browserify')
+        }
+      }
+    }
+  },
   transpileDependencies: true,
   devServer: {
     proxy: {
