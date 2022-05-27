@@ -1,0 +1,15 @@
+@import './variables.scss';
+
+:export {
+  // 登录页配置
+  loginTextColor: $loginTextColor;
+  loginButtonColor: $loginButtonColor;
+  loginSuffixColor: $loginSuffixColor;
+
+  // sidebar配置
+  sideBarWidth: $sideBarWidth;
+  sideBarBackground: $sideBarBackground;
+  // navbar配置
+  navBarHeight: $navBarHeight;
+
+}

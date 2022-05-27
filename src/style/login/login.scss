@@ -1,3 +1,5 @@
+@import '../variables.scss';
+
 .login-page {
   height: 100%;
 
@@ -36,7 +38,7 @@
         height: .5rem;
         line-height: .5rem;
         font-size: .2rem;
-        color: #adb5bd;
+        color: $loginTextColor;
         font-weight: 700;
         font-family: "TypoGraphica";
       }
@@ -68,8 +70,8 @@
               padding: .08rem .48rem;
               box-sizing: border-box;
               transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-              color: #adb5bd;
-              border-bottom: #adb5bd .01rem solid;
+              color: $loginTextColor;
+              border-bottom: $loginTextColor .01rem solid;
             }
 
             .el-input__suffix {
@@ -77,7 +79,7 @@
               position: absolute;
               width: 100%;
               bottom: 0;
-              border-bottom: 1px #5e72e4 solid;
+              border-bottom: 1px $loginSuffixColor solid;
               transform: scaleX(0);
               transition: transform 0.3s;
             }
@@ -95,7 +97,7 @@
           position: absolute;
           text-transform: none;
           line-height: 1;
-          color: #adb5bd;
+          color: $loginTextColor;
           font-size: .24rem;
         }
 
@@ -114,11 +116,11 @@
         box-shadow: rgba(0, 0, 0, 0.1) 0 0 .5rem 0;
         font-weight: 500;
         font-size: .15rem;
-        color: #fff;
+        color: $loginTextColor;
         text-align: center;
         cursor: pointer;
         min-height: .5rem;
-        background-color: #5e72e4;
+        background-color: $loginButtonColor;
         border-radius: .06rem;
         outline: none;
         border-style: none;

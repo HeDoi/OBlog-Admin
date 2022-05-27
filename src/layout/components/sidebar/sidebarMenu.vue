@@ -1,6 +1,14 @@
 <template>
-  <el-menu class="menu">
+  <el-menu
+    class="menu"
+    :background-color="$store.getters.cssVar.sideBarBackground"
+    router
+  >
     <sidebar-item v-for="item in routes" :key="item.path" :route="item" />
+    <!-- 自定义sidebar菜单插槽 -->
+    <el-menu-item disabled>
+      Sidebar
+    </el-menu-item>
   </el-menu>
 </template>
 
