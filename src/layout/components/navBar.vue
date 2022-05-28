@@ -35,7 +35,7 @@ const handleLoginOut = () => {
   height: $navBarHeight;
   overflow: hidden;
   position: relative;
-  background-color: #fff;
+  background-color: $navBarBackground;
   box-shadow: 0 1px 4px rgb(0, 21, 41, 0.08);
 
   .right-menu {

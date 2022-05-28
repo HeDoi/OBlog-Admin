@@ -22,6 +22,7 @@ import AppMain from './components/appMain'
 .app-wrapper {
   width: 100%;
   height: 100%;
+  color: $appMainTextColor;
 
   .sideBar-container {
     float: left;
@@ -36,13 +37,12 @@ import AppMain from './components/appMain'
     .fixed-header {
       width: 100%;
       height: $navBarHeight;
-      background-color: #777;
     }
 
     .main-container {
       width: 100%;
       height: calc(100% - #{$navBarHeight});
-      background-color: #888;
+      background-color: $appMainBackground;
     }
   }
 }

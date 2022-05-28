@@ -1,10 +1,18 @@
+$textColor: #DFE0DF;
+
 // 登录页配置
-$loginTextColor: #DFE0DF;
+$loginTextColor: $textColor;
 $loginButtonColor: #1F7290;
 $loginSuffixColor: #D39C72;
+$loginBlurColor: rgb(89 63 30 / 43%);
 
-// sidebar配置
+// sideBar配置
 $sideBarWidth: 250px;
-$sideBarBackground: #009AA5;
-// navbar配置
+$sideBarBackground: #222226;
+$sideBarTextColor: $textColor;
+// navBar配置
 $navBarHeight: 50px;
+$navBarBackground: #111113;
+// appMain配置
+$appMainBackground: #111113;
+$appMainTextColor: $textColor;

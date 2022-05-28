@@ -2,6 +2,7 @@
   <el-menu
     class="menu"
     :background-color="$store.getters.cssVar.sideBarBackground"
+    :text-color="$store.getters.cssVar.sideBarTextColor"
     router
   >
     <sidebar-item v-for="item in routes" :key="item.path" :route="item" />
@@ -24,4 +25,5 @@ const routes = generateRoutes(filterRoute)
 </script>
 
 <style lang="scss" scoped>
+
 </style>
