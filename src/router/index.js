@@ -16,7 +16,8 @@ const publicRoutes = [
         component: () => import('@/views/profile/indexView'),
         meta: {
           title: 'profile',
-          icon: 'el-icon-user'
+          icon: 'el-icon-user',
+          sidebar: true
         }
       },
       {
@@ -44,7 +45,8 @@ const privateRoutes = [
     component: layout,
     meta: {
       title: 'user',
-      icon: 'personnel'
+      icon: 'personnel',
+      sidebar: true
     },
     children: [
       {
@@ -52,7 +54,7 @@ const privateRoutes = [
         component: () => import('@/views/user-manage/indexView'),
         meta: {
           title: 'userManage',
-          icon: 'personal-manage'
+          sidebar: true
         }
       },
       {
@@ -60,7 +62,7 @@ const privateRoutes = [
         component: () => import('@/views/role-list/indexView'),
         meta: {
           title: 'roleList',
-          icon: 'role'
+          sidebar: true
         }
       },
       {
@@ -68,7 +70,7 @@ const privateRoutes = [
         component: () => import('@/views/permission-list/indexView'),
         meta: {
           title: 'permissionList',
-          icon: 'permission'
+          sidebar: true
         }
       },
       {
@@ -93,7 +95,8 @@ const privateRoutes = [
     component: layout,
     meta: {
       title: 'article',
-      icon: 'article'
+      icon: 'article',
+      sidebar: true
     },
     children: [
       {
@@ -101,7 +104,7 @@ const privateRoutes = [
         component: () => import('@/views/article-ranking/indexView'),
         meta: {
           title: 'articleRanking',
-          icon: 'article-ranking'
+          sidebar: true
         }
       },
       {
@@ -116,7 +119,7 @@ const privateRoutes = [
         component: () => import('@/views/article-create/indexView'),
         meta: {
           title: 'articleCreate',
-          icon: 'article-create'
+          sidebar: true
         }
       },
       {

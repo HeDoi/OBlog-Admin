@@ -37,7 +37,7 @@ export const generateRoutes = (routes, baseUrl = '') => {
         path: routePath,
         children: []
       }
-      if (data.meta.icon && data.meta.title) {
+      if (data.meta.sidebar) {
         result.push(data)
       }
     }
