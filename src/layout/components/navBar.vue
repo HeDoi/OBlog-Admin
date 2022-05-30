@@ -18,25 +18,48 @@
         </template>
       </el-dropdown>
     </div>
+    <div class="left-menu">
+      <el-breadcrumb separator="/">
+        <el-breadcrumb-item v-for="(item, index) in breadcrumbData" :key="item.path">
+          <span class="no-redirect" v-if="index === breadcrumbData.length -1">{{item.meta.title}}</span>
+          <router-link class="redirect" v-else :to="item.path">{{item.meta.title}}</router-link>
+        </el-breadcrumb-item>
+      </el-breadcrumb>
+    </div>
   </div>
 </template>
 
 <script setup>
-import {} from 'vue'
+import { ref, watch } from 'vue'
 import store from '@/store'
+import { useRoute } from 'vue-router'
 const handleLoginOut = () => {
   store.dispatch('user/loginOut')
 }
+
+const route = useRoute()
+const breadcrumbData = ref([])
+const getBreadcrumbData = () => {
+  breadcrumbData.value = route.matched.filter(
+    item => item.meta.sidebar
+  )
+}
+watch(route, () => {
+  getBreadcrumbData()
+  console.log(breadcrumbData.value)
+}, {
+  immediate: true
+})
 </script>
 
 <style lang="scss" scoped>
 @import '@/style/variables.scss';
 .navBar {
-  height: $navBarHeight;
+  min-height: $navBarHeight;
   overflow: hidden;
   position: relative;
+  padding: 0 10px 0 40px;
   background-color: $navBarBackground;
-  box-shadow: 0 1px 4px rgb(0, 21, 41, 0.08);
 
   .right-menu {
     display: flex;
@@ -47,13 +70,33 @@ const handleLoginOut = () => {
       cursor: pointer;
 
       .avatar-container {
-        margin-top: calc((#{$navBarHeight} - 40px) / 2);
+        margin: calc((#{$navBarHeight} - 40px) / 2);
         position: relative;
 
         .el-avatar {
           --el-avatar-border-radius: none;
           --el-avatar-bg-color: none;
         }
+      }
+    }
+  }
+
+  .left-menu {
+    height: $navBarHeight;
+    display: flex;
+    align-items: center;
+    float: left;
+
+    :deep(.el-breadcrumb__inner) {
+      color: $textColor;
+      font-size: 18px;
+
+      .no-redirect {
+        color: $textColor;
+        transition: all 0.5s;
+      }
+      .redirect {
+        color: #56505B;
       }
     }
   }

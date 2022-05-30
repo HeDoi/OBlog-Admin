@@ -8,10 +8,6 @@ defineProps({
   title: {
     type: String,
     required: true
-  },
-  icon: {
-    type: String,
-    required: true
   }
 })
 </script>

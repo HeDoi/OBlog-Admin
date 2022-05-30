@@ -33,15 +33,19 @@ import AppMain from './components/appMain'
     float: right;
     width: calc(100% - #{$sideBarWidth});
     height: 100%;
+    display: flex;
+    flex-direction: column;
 
     .fixed-header {
       width: 100%;
       height: $navBarHeight;
+      flex: 1;
     }
 
     .main-container {
+      // border-top: 1px #56505B solid;
       width: 100%;
-      height: calc(100% - #{$navBarHeight});
+      // height: calc(100% - #{$navBarHeight});
       background-color: $appMainBackground;
     }
   }
