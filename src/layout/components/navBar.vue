@@ -19,11 +19,13 @@
       </el-dropdown>
     </div>
     <div class="left-menu">
-      <el-breadcrumb separator="/">
-        <el-breadcrumb-item v-for="(item, index) in breadcrumbData" :key="item.path">
-          <span class="no-redirect" v-if="index === breadcrumbData.length -1">{{item.meta.title}}</span>
-          <router-link class="redirect" v-else :to="item.path">{{item.meta.title}}</router-link>
-        </el-breadcrumb-item>
+      <el-breadcrumb class="breadcrumb" separator="/">
+        <transition-group name="breadcrumb">
+          <el-breadcrumb-item v-for="(item, index) in breadcrumbData" :key="item.path">
+            <span class="no-redirect" v-if="index === breadcrumbData.length -1">{{item.meta.title}}</span>
+            <router-link class="redirect" v-else :to="item.path">{{item.meta.title}}</router-link>
+          </el-breadcrumb-item>
+        </transition-group>
       </el-breadcrumb>
     </div>
   </div>
@@ -100,5 +102,20 @@ watch(route, () => {
       }
     }
   }
+}
+// 面包屑动画
+.breadcrumb-enter-active,
+.breadcrumb-leave-active {
+  transition: all 0.5s;
+}
+.breadcrumb-enter-from,
+.breadcrumb-leave-active {
+  opacity: 0;
+  // position: absolute;
+  // left: 100px;
+  transform: translateY(15px);
+}
+.breadcrumb-leave-active {
+  position: absolute;
 }
 </style>
