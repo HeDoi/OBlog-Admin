@@ -1,9 +1,10 @@
 <template>
-  <span>{{ title }}</span>
+  <span>{{ generateTitle(title) }}</span>
 </template>
 
 <script setup>
 import { defineProps } from 'vue'
+import { generateTitle } from '@/i18n/index'
 defineProps({
   title: {
     type: String,
