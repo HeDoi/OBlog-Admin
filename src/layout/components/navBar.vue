@@ -22,8 +22,8 @@
       <el-breadcrumb class="breadcrumb" separator="/">
         <transition-group name="breadcrumb">
           <el-breadcrumb-item v-for="(item, index) in breadcrumbData" :key="item.path">
-            <span class="no-redirect" v-if="index === breadcrumbData.length -1">{{item.meta.title}}</span>
-            <router-link class="redirect" v-else :to="item.path">{{item.meta.title}}</router-link>
+            <span class="no-redirect" v-if="index === breadcrumbData.length -1">{{ generateTitle(item.meta.title) }}</span>
+            <router-link class="redirect" v-else :to="item.path">{{ generateTitle(item.meta.title) }}</router-link>
           </el-breadcrumb-item>
         </transition-group>
       </el-breadcrumb>
@@ -35,6 +35,7 @@
 import { ref, watch } from 'vue'
 import store from '@/store'
 import { useRoute } from 'vue-router'
+import { generateTitle } from '@/i18n/index'
 const handleLoginOut = () => {
   store.dispatch('user/loginOut')
 }
@@ -48,7 +49,6 @@ const getBreadcrumbData = () => {
 }
 watch(route, () => {
   getBreadcrumbData()
-  console.log(breadcrumbData.value)
 }, {
   immediate: true
 })
@@ -108,12 +108,14 @@ watch(route, () => {
 .breadcrumb-leave-active {
   transition: all 0.5s;
 }
-.breadcrumb-enter-from,
-.breadcrumb-leave-active {
+.breadcrumb-enter-from {
   opacity: 0;
   // position: absolute;
   // left: 100px;
-  transform: translateY(15px);
+  transform: translateX(15px);
+}
+.breadcrumb-leave-active {
+  display: none;
 }
 .breadcrumb-leave-active {
   position: absolute;
