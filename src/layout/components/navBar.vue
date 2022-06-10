@@ -33,9 +33,11 @@
 
 <script setup>
 import { ref, watch } from 'vue'
-import store from '@/store'
+import { useStore } from 'vuex'
 import { useRoute } from 'vue-router'
-import { generateTitle } from '@/i18n/index'
+import { generateTitle } from '@/i18n'
+
+const store = useStore()
 const handleLoginOut = () => {
   store.dispatch('user/loginOut')
 }

@@ -4,7 +4,7 @@
     </div>
     <div class="login-container">
       <div class="title-container">
-        <h3 class="title">用户登录</h3>
+        <h3 class="title">{{ $t('message.login.title') }}</h3>
       </div>
       <el-form class="login-form" ref="loginFromRef" :model="loginFrom" :rules="loginRules">
         <el-form-item prop="username">
@@ -28,7 +28,7 @@
             <i class="iconfont" :class="passwordShow?'icon-view':'icon-view-off'"></i>
           </span>
         </el-form-item>
-        <el-button type="primary" size="default" :loading="loading" @click="handlerLogin">登录</el-button>
+        <el-button type="primary" size="default" :loading="loading" @click="handlerLogin">{{ $t('message.login.loginBtn') }}</el-button>
       </el-form>
     </div>
   </div>
@@ -36,19 +36,21 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 import { useStore } from 'vuex'
-import router from '@/router'
+import { useI18n } from 'vue-i18n'
 const loginFrom = ref({
   username: 'super-admin',
   password: '123456'
 })
 
+const i18n = useI18n()
 const loginRules = {
   username: [
-    { required: true, message: '请输入用户名', trigger: 'blur' }
+    { required: true, message: i18n.t('message.login.usernameRule'), trigger: 'blur' }
   ],
   password: [
-    { required: true, message: '密码应大于五位', trigger: 'blur', min: 6 }
+    { required: true, message: i18n.t('message.login.passwordRule'), trigger: 'blur', min: 6 }
   ]
 }
 
@@ -59,6 +61,7 @@ const onChangePasswordShow = () => {
 
 const loading = ref(false)
 const loginFromRef = ref(null)
+const router = useRouter()
 const store = useStore()
 const handlerLogin = () => {
   // 进行表单校验

@@ -4,7 +4,7 @@
 
 <script setup>
 import { defineProps } from 'vue'
-import { generateTitle } from '@/i18n/index'
+import { generateTitle } from '@/i18n'
 defineProps({
   title: {
     type: String,

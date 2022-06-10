@@ -2,12 +2,14 @@ export default {
   login: {
     title: '用户登录',
     loginBtn: '登录',
-    usernameRule: '用户名为必填项',
-    passwordRule: '密码不能少于6位'
+    usernameRule: '请输入用户名',
+    passwordRule: '密码应大于五位'
   },
   route: {
     profile: '个人中心',
     user: '用户',
+    setting: '设置',
+    theme: '主题',
     excelImport: 'Excel导入',
     userManage: '员工管理',
     userInfo: '员工信息',

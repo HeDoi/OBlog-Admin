@@ -18,9 +18,9 @@
 
 <script setup>
 import { computed } from 'vue'
-import sidebarItem from './sidebarItem.vue'
 import { useRouter, useRoute } from 'vue-router'
 import { filterRoutes, generateRoutes } from '@/utils/route'
+import sidebarItem from './sidebarItem.vue'
 
 const router = useRouter()
 const routes = computed(() => {

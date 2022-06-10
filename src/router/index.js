@@ -130,6 +130,28 @@ const privateRoutes = [
         }
       }
     ]
+  },
+  {
+    path: '/setting',
+    redirect: '/setting/theme',
+    component: layout,
+    meta: {
+      title: 'setting',
+      icon: 'setting',
+      sidebar: true
+    },
+    children: [
+      {
+        path: '/setting/theme',
+        name: 'theme',
+        component: () => import('@/views/setting/themeView'),
+        meta: {
+          title: 'theme',
+          icon: 'el-icon-setting',
+          sidebar: true
+        }
+      }
+    ]
   }
 ]
 
