@@ -34,7 +34,7 @@ a:focus,
 a:hover {
   cursor: pointer;
   color: inherit; // 继承父元素的 color 属性
-  text-emphasis: none;
+  text-decoration:none;
 }
 
 a:focus,

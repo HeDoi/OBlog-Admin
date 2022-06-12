@@ -1,10 +1,11 @@
 import { getItem, setItem } from '@/utils/storage'
 import { TAGS_VIEW } from '@/constants'
+
 export default {
   namespaced: true,
-  state: {
+  state: () => ({
     tagsViewList: getItem(TAGS_VIEW) || []
-  },
+  }),
   mutations: {
     /**
      * 添加TagsView
@@ -14,10 +15,17 @@ export default {
       const isFind = state.tagsViewList.find(item => {
         return item.path === tag.path
       })
-      if (isFind) {
+      if (!isFind) {
         state.tagsViewList.push(tag)
         setItem(TAGS_VIEW, state.tagsViewList)
       }
+    },
+    removeTagsView(state, payload) {
+      console.log(payload)
+      if (payload.type === 'index') {
+        state.tagsViewList.splice(payload.index, 1)
+      }
+      setItem(TAGS_VIEW, state.tagsViewList)
     }
   }
 }

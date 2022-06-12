@@ -1,11 +1,11 @@
 <template>
   <div class="app-wrapper">
-    <sidebar-view class="sideBar-container"></sidebar-view>
+    <SidebarView class="sideBar-container"></SidebarView>
     <div class="app-container">
       <div class="fixed-header">
-        <nav-bar class="navBar-container"></nav-bar>
+        <NavBar></NavBar>
       </div>
-      <app-main class="main-container"></app-main>
+      <AppMain class="main-container"></AppMain>
     </div>
   </div>
 </template>
@@ -38,14 +38,12 @@ import AppMain from './components/appMain'
 
     .fixed-header {
       width: 100%;
-      height: $navBarHeight;
+      max-height: $navBarHeight + $tagHeight;
       flex: 1;
     }
 
     .main-container {
-      // border-top: 1px #56505B solid;
       width: 100%;
-      // height: calc(100% - #{$navBarHeight});
       background-color: $appMainBackground;
     }
   }

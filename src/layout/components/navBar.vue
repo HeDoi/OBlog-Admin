@@ -29,6 +29,9 @@
       </el-breadcrumb>
     </div>
   </div>
+  <div class="tag-wrapper">
+    <TagsView></TagsView>
+  </div>
 </template>
 
 <script setup>
@@ -36,6 +39,7 @@ import { ref, watch } from 'vue'
 import { useStore } from 'vuex'
 import { useRoute } from 'vue-router'
 import { generateTitle } from '@/i18n'
+import TagsView from '@/components/TagsView'
 
 const store = useStore()
 const handleLoginOut = () => {
@@ -121,5 +125,12 @@ watch(route, () => {
 }
 .breadcrumb-leave-active {
   position: absolute;
+}
+
+.tag-wrapper {
+  min-height: $tagHeight;
+  line-height: $tagHeight;
+  padding: 0 10px 0 20px;
+  background-color:  $navBarBackground;
 }
 </style>
