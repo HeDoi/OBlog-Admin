@@ -19,7 +19,6 @@ import {} from 'vue'
 import { useRoute } from 'vue-router'
 import { useStore } from 'vuex'
 const route = useRoute()
-console.log(route.path)
 const isActive = (path) => {
   return route.path === path
 }
@@ -27,7 +26,7 @@ const store = useStore()
 const onCloseClick = (index) => {
   store.commit('app/removeTagsView', {
     type: 'index',
-    index: index
+    index
   })
 }
 </script>

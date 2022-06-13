@@ -9,7 +9,7 @@
 
 <script setup>
 import {} from 'vue'
-import sidebarMenu from './sidebarMenu'
+import sidebarMenu from './sidebarMenu.vue'
 </script>
 
 <style lang="scss" scoped>

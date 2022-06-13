@@ -39,7 +39,7 @@ import { ref, watch } from 'vue'
 import { useStore } from 'vuex'
 import { useRoute } from 'vue-router'
 import { generateTitle } from '@/i18n'
-import TagsView from '@/components/TagsView'
+import TagsView from '@/components/TagsView.vue'
 
 const store = useStore()
 const handleLoginOut = () => {

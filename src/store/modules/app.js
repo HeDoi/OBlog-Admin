@@ -21,7 +21,6 @@ export default {
       }
     },
     removeTagsView(state, payload) {
-      console.log(payload)
       if (payload.type === 'index') {
         state.tagsViewList.splice(payload.index, 1)
       }

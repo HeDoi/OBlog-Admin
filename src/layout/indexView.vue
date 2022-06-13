@@ -12,9 +12,9 @@
 
 <script setup>
 import {} from 'vue'
-import SidebarView from './components/sidebar/indexView'
-import NavBar from './components/navBar'
-import AppMain from './components/appMain'
+import SidebarView from './components/sidebar/indexView.vue'
+import NavBar from './components/navBar.vue'
+import AppMain from './components/appMain.vue'
 </script>
 
 <style lang="scss" scoped>

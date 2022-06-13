@@ -5,7 +5,7 @@ import { ElMessage } from 'element-plus'
 import { tokenTimeOut } from '@/utils/auth'
 
 const service = axios.create({
-  baseURL: process.env.VUE_APP_BASE_API,
+  baseURL: import.meta.env.VITE_APP_BASE_API,
   timeout: 5000
 })
 

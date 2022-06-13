@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import layout from '@/layout/indexView'
+import layout from '@/layout/indexView.vue'
 
 /**
  * 公开路由表
@@ -13,7 +13,7 @@ const publicRoutes = [
       {
         path: '/profile',
         name: 'profile',
-        component: () => import('@/views/profile/indexView'),
+        component: () => import('@/views/profile/indexView.vue'),
         meta: {
           title: 'profile',
           icon: 'el-icon-user',
@@ -23,18 +23,18 @@ const publicRoutes = [
       {
         path: '/404',
         name: '404',
-        component: () => import('@/views/error-page/404View')
+        component: () => import('@/views/error-page/404View.vue')
       },
       {
         path: '/401',
         name: '401',
-        component: () => import('@/views/error-page/401View')
+        component: () => import('@/views/error-page/401View.vue')
       }
     ]
   },
   {
     path: '/login',
-    component: () => import('@/views/login/indexView')
+    component: () => import('@/views/login/indexView.vue')
   }
 ]
 
@@ -51,7 +51,7 @@ const privateRoutes = [
     children: [
       {
         path: '/user/manage',
-        component: () => import('@/views/user-manage/indexView'),
+        component: () => import('@/views/user-manage/indexView.vue'),
         meta: {
           title: 'userManage',
           sidebar: true
@@ -59,7 +59,7 @@ const privateRoutes = [
       },
       {
         path: '/user/role',
-        component: () => import('@/views/role-list/indexView'),
+        component: () => import('@/views/role-list/indexView.vue'),
         meta: {
           title: 'roleList',
           sidebar: true
@@ -67,7 +67,7 @@ const privateRoutes = [
       },
       {
         path: '/user/permission',
-        component: () => import('@/views/permission-list/indexView'),
+        component: () => import('@/views/permission-list/indexView.vue'),
         meta: {
           title: 'permissionList',
           sidebar: true
@@ -75,14 +75,14 @@ const privateRoutes = [
       },
       {
         path: '/user/info/:id',
-        component: () => import('@/views/user-info/indexView'),
+        component: () => import('@/views/user-info/indexView.vue'),
         meta: {
           title: 'userInfo'
         }
       },
       {
         path: '/user/import',
-        component: () => import('@/views/import/indexView'),
+        component: () => import('@/views/import/indexView.vue'),
         meta: {
           title: 'excelImport'
         }
@@ -101,7 +101,7 @@ const privateRoutes = [
     children: [
       {
         path: '/article/ranking',
-        component: () => import('@/views/article-ranking/indexView'),
+        component: () => import('@/views/article-ranking/indexView.vue'),
         meta: {
           title: 'articleRanking',
           sidebar: true
@@ -109,14 +109,14 @@ const privateRoutes = [
       },
       {
         path: '/article/:id',
-        component: () => import('@/views/article-detail/indexView'),
+        component: () => import('@/views/article-detail/indexView.vue'),
         meta: {
           title: 'articleDetail'
         }
       },
       {
         path: '/article/create',
-        component: () => import('@/views/article-create/indexView'),
+        component: () => import('@/views/article-create/indexView.vue'),
         meta: {
           title: 'articleCreate',
           sidebar: true
@@ -124,7 +124,7 @@ const privateRoutes = [
       },
       {
         path: '/article/editor/:id',
-        component: () => import('@/views/article-create/indexView'),
+        component: () => import('@/views/article-create/indexView.vue'),
         meta: {
           title: 'articleEditor'
         }
@@ -144,7 +144,7 @@ const privateRoutes = [
       {
         path: '/setting/theme',
         name: 'theme',
-        component: () => import('@/views/setting/themeView'),
+        component: () => import('@/views/setting/themeView.vue'),
         meta: {
           title: 'theme',
           icon: 'el-icon-setting',
